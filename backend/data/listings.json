@@ -1,0 +1,5 @@
+[
+  {"id":"lst_001","name":"Casa Marbella Main Villa","unit":"Main Villa","location":"Marbella Old Town, Spain","bedrooms":3,"max_guests":6,"channels":["Airbnb","Vrbo","Booking.com"]},
+  {"id":"lst_002","name":"Casa Marbella Garden Studio","unit":"Garden Studio","location":"Marbella Old Town, Spain","bedrooms":1,"max_guests":2,"channels":["Airbnb","Vrbo"]},
+  {"id":"lst_003","name":"Casa Marbella Penthouse","unit":"Penthouse","location":"Marbella Old Town, Spain","bedrooms":2,"max_guests":4,"channels":["Airbnb","Booking.com"]}
+]

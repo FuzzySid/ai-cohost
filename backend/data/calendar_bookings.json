@@ -1,0 +1,5 @@
+[
+  {"id":"bk_9921","listing_id":"lst_003","channel":"Airbnb","guest":"David Chen","check_in":"2026-10-14","check_out":"2026-10-18","guests":3,"status":"confirmed"},
+  {"id":"bk_4109","listing_id":"lst_003","channel":"Vrbo","guest":"Sarah Jenkins","check_in":"2026-10-15","check_out":"2026-10-19","guests":2,"status":"pending_sync"},
+  {"id":"bk_5520","listing_id":"lst_001","channel":"Booking.com","guest":"Laura Martin","check_in":"2026-10-24","check_out":"2026-10-28","guests":4,"status":"confirmed"}
+]

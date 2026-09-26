@@ -1,0 +1,5 @@
+[
+  {"id":"msg_1042","listing_id":"lst_001","guest":"Marion Dubois","channel":"Airbnb","language":"fr","received_at":"2026-09-26T11:42:00+02:00","message":"Bonjour Elena, est-ce que le check-in anticipé vers 13h est possible ?","status":"needs_action"},
+  {"id":"msg_1041","listing_id":"lst_003","guest":"Jens Müller","channel":"Vrbo","language":"de","received_at":"2026-09-26T09:15:00+02:00","message":"We are six guests. Is the penthouse available for the festival weekend?","status":"unanswered"},
+  {"id":"msg_1038","listing_id":"lst_002","guest":"Sophie van der Beek","channel":"Vrbo","language":"en","received_at":"2026-09-25T18:20:00+02:00","message":"Keypad code received, thank you so much!","status":"resolved"}
+]
