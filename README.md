@@ -4,7 +4,7 @@ Host Copilot is a mock-data prototype for vacation rental operations. The FastAP
 
 ## Run locally
 
-Use Python 3.11+ and Node.js. In two terminals:
+Use Python 3.11+ and Node.js 16.14+. In two terminals:
 
 ```bash
 cd backend

@@ -1,5 +1,44 @@
 [
-  {"id":"lst_001","name":"Casa Marbella Main Villa","unit":"Main Villa","location":"Marbella Old Town, Spain","bedrooms":3,"max_guests":6,"channels":["Airbnb","Vrbo","Booking.com"]},
-  {"id":"lst_002","name":"Casa Marbella Garden Studio","unit":"Garden Studio","location":"Marbella Old Town, Spain","bedrooms":1,"max_guests":2,"channels":["Airbnb","Vrbo"]},
-  {"id":"lst_003","name":"Casa Marbella Penthouse","unit":"Penthouse","location":"Marbella Old Town, Spain","bedrooms":2,"max_guests":4,"channels":["Airbnb","Booking.com"]}
+  {
+    "id": "lst_001",
+    "name": "Casa Marbella Main Villa",
+    "unit": "Main Villa",
+    "location": "Marbella Old Town, Spain",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "max_guests": 6,
+    "amenities": ["private plunge pool", "fully equipped kitchen", "high-speed Wi-Fi", "washer and dryer", "air conditioning", "terrace", "free street parking nearby"],
+    "check_in": "15:00",
+    "check_out": "11:00",
+    "cancellation_policy": "Free cancellation up to 14 days before arrival; after that, the first night is non-refundable.",
+    "channels": ["Airbnb", "Vrbo", "Booking.com"]
+  },
+  {
+    "id": "lst_002",
+    "name": "Casa Marbella Garden Studio",
+    "unit": "Garden Studio",
+    "location": "Marbella Old Town, Spain",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "max_guests": 2,
+    "amenities": ["private garden patio", "kitchenette", "high-speed Wi-Fi", "air conditioning", "queen bed", "espresso machine", "shared washer"],
+    "check_in": "15:00",
+    "check_out": "11:00",
+    "cancellation_policy": "Free cancellation up to 7 days before arrival; after that, the first night is non-refundable.",
+    "channels": ["Airbnb", "Vrbo"]
+  },
+  {
+    "id": "lst_003",
+    "name": "Casa Marbella Penthouse",
+    "unit": "Penthouse",
+    "location": "Marbella Old Town, Spain",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "max_guests": 4,
+    "amenities": ["roof terrace", "sea view", "fully equipped kitchen", "high-speed Wi-Fi", "air conditioning", "washer", "elevator access"],
+    "check_in": "16:00",
+    "check_out": "10:00",
+    "cancellation_policy": "Free cancellation up to 14 days before arrival; after that, the first night is non-refundable.",
+    "channels": ["Airbnb", "Booking.com"]
+  }
 ]
