@@ -2,5 +2,9 @@
   {"listing_id":"lst_001","date":"2026-10-03","channel":"Airbnb","nightly_rate_eur":142,"minimum_nights":2},
   {"listing_id":"lst_002","date":"2026-11-14","channel":"Airbnb","nightly_rate_eur":115,"minimum_nights":2},
   {"listing_id":"lst_002","date":"2026-11-14","channel":"Vrbo","nightly_rate_eur":143,"minimum_nights":2},
-  {"listing_id":"lst_003","date":"2026-10-15","channel":"Booking.com","nightly_rate_eur":228,"minimum_nights":3}
+  {"listing_id":"lst_003","date":"2026-10-15","channel":"Booking.com","nightly_rate_eur":228,"minimum_nights":3},
+  {"listing_id":"lst_004","date":"2026-12-05","channel":"Airbnb","nightly_rate_eur":100,"minimum_nights":2},
+  {"listing_id":"lst_004","date":"2026-12-05","channel":"Vrbo","nightly_rate_eur":121,"minimum_nights":2},
+  {"listing_id":"lst_005","date":"2027-01-10","channel":"Airbnb","nightly_rate_eur":135,"minimum_nights":2},
+  {"listing_id":"lst_006","date":"2027-02-05","channel":"Vrbo","nightly_rate_eur":185,"minimum_nights":2}
 ]

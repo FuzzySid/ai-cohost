@@ -40,5 +40,47 @@
     "check_out": "10:00",
     "cancellation_policy": "Free cancellation up to 14 days before arrival; after that, the first night is non-refundable.",
     "channels": ["Airbnb", "Booking.com"]
+  },
+  {
+    "id": "lst_004",
+    "name": "Casa Marbella Courtyard Flat",
+    "unit": "Courtyard Flat",
+    "location": "Marbella Old Town, Spain",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "max_guests": 4,
+    "amenities": ["courtyard patio", "full kitchen", "Wi-Fi", "air conditioning"],
+    "check_in": "15:00",
+    "check_out": "11:00",
+    "cancellation_policy": "Free cancellation up to 7 days before arrival.",
+    "channels": ["Airbnb", "Vrbo", "Booking.com"]
+  },
+  {
+    "id": "lst_005",
+    "name": "Casa Marbella Sierra View Loft",
+    "unit": "Sierra View Loft",
+    "location": "Marbella Old Town, Spain",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "max_guests": 2,
+    "amenities": ["mountain view", "kitchenette", "Wi-Fi", "air conditioning"],
+    "check_in": "15:00",
+    "check_out": "11:00",
+    "cancellation_policy": "Free cancellation up to 7 days before arrival.",
+    "channels": ["Airbnb", "Vrbo"]
+  },
+  {
+    "id": "lst_006",
+    "name": "Casa Marbella Harbor Suite",
+    "unit": "Harbor Suite",
+    "location": "Marbella Old Town, Spain",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "max_guests": 4,
+    "amenities": ["harbor view", "full kitchen", "Wi-Fi", "washer"],
+    "check_in": "16:00",
+    "check_out": "10:00",
+    "cancellation_policy": "Free cancellation up to 14 days before arrival.",
+    "channels": ["Vrbo", "Booking.com"]
   }
 ]

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import briefs, conflicts, cost, replies
+from app.routers import briefs, conflicts, cost, listings, replies
 
 app = FastAPI(title="Host Copilot API", version="0.1.0")
 app.add_middleware(
@@ -14,6 +14,7 @@ app.add_middleware(
 
 app.include_router(replies.router, prefix="/api")
 app.include_router(conflicts.router, prefix="/api")
+app.include_router(listings.router, prefix="/api")
 app.include_router(briefs.router, prefix="/api")
 app.include_router(cost.router, prefix="/api")
 
