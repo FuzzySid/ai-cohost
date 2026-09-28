@@ -157,7 +157,7 @@ def generate_weekly_brief() -> dict[str, Any]:
 The supplied JSON contains all allowed facts and all computed numbers. Never calculate, infer, or add a number, date, guest, property, channel, event, or claim that is not explicitly present in the supplied facts. Describe only the supplied non-null issue records. Include one flagged issue for each non-null unanswered, risky_reviews, and top_conflict input, with at most three total. For an empty/null category, omit it. Use the guest's actual message/review/conflict type to describe the issue. If there are no issues, return an empty flagged_issues array and recommend checking availability.
 Respond ONLY with JSON shaped as: {"headline_detail": string, "flagged_issues": [{"type": "unanswered_inquiry"|"review_risk"|"conflict", "title": string, "detail": string}], "suggested_action_title": string, "suggested_action_detail": string}. Use these exact type values for matching source records. Keep each field to one concise sentence, under 120 words total. The headline detail and suggested action must refer only to supplied facts; do not add operational recommendations that require unsupported information."""
     result = call_model(tier="mid", system_prompt=system_prompt, user_prompt=json.dumps(stats, ensure_ascii=False, default=str), max_tokens=800)
-    cost_meter.log_call(result.model, result.tokens_in, result.tokens_out)
+    cost_meter.log_call(result.model, result.tokens_in, result.tokens_out, call_type="weekly_brief")
     written = _parse_model_json(result.text)
 
     raw_issues = written.get("flagged_issues", [])

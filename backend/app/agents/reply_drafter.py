@@ -58,7 +58,7 @@ Respond ONLY with JSON: {{"draft_reply": "...", "detected_language": "xx"}}"""
         for message in thread["messages"]
     )
     result = call_model(tier="mid", system_prompt=system_prompt, user_prompt=thread_text)
-    cost_meter.log_call(result.model, result.tokens_in, result.tokens_out)
+    cost_meter.log_call(result.model, result.tokens_in, result.tokens_out, call_type="reply_draft")
 
     response_text = result.text.strip()
     if response_text.startswith("```"):
