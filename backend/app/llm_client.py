@@ -23,7 +23,7 @@ TIER_MODELS = {
 }
 
 
-def call_model(tier: str, system_prompt: str, user_prompt: str) -> LLMResult:
+def call_model(tier: str, system_prompt: str, user_prompt: str, max_tokens: int = 400) -> LLMResult:
     """Call the configured LLM provider and normalize its response and usage."""
     if tier not in TIER_MODELS:
         raise ValueError(f"Unknown model tier: {tier}")
@@ -38,7 +38,7 @@ def call_model(tier: str, system_prompt: str, user_prompt: str) -> LLMResult:
         client = Anthropic()
         response = client.messages.create(
             model=model,
-            max_tokens=400,
+            max_tokens=max_tokens,
             system=system_prompt,
             messages=[{"role": "user", "content": user_prompt}],
         )

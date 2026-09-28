@@ -76,5 +76,191 @@
     "model": "claude-sonnet-5",
     "tokens_in": 498,
     "tokens_out": 203
+  },
+  {
+    "timestamp": "2026-09-27T14:50:44.569425+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1218,
+    "tokens_out": 400
+  },
+  {
+    "timestamp": "2026-09-27T14:55:18.348662+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 190
+  },
+  {
+    "timestamp": "2026-09-27T14:56:01.938880+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 186
+  },
+  {
+    "timestamp": "2026-09-27T14:56:10.687170+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1240,
+    "tokens_out": 400
+  },
+  {
+    "timestamp": "2026-09-27T14:56:16.061858+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1240,
+    "tokens_out": 400
+  },
+  {
+    "timestamp": "2026-09-27T14:56:36.574442+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1240,
+    "tokens_out": 400
+  },
+  {
+    "timestamp": "2026-09-27T14:59:19.778300+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1260,
+    "tokens_out": 496
+  },
+  {
+    "timestamp": "2026-09-27T14:59:26.865287+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1260,
+    "tokens_out": 498
+  },
+  {
+    "timestamp": "2026-09-27T15:59:39.528756+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 184
+  },
+  {
+    "timestamp": "2026-09-27T15:59:39.606016+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 193
+  },
+  {
+    "timestamp": "2026-09-27T15:59:39.910173+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 201
+  },
+  {
+    "timestamp": "2026-09-27T16:28:35.957435+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1260,
+    "tokens_out": 473
+  },
+  {
+    "timestamp": "2026-09-27T16:28:52.146485+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1260,
+    "tokens_out": 486
+  },
+  {
+    "timestamp": "2026-09-27T16:39:56.262527+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1260,
+    "tokens_out": 490
+  },
+  {
+    "timestamp": "2026-09-27T16:42:00.594973+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 188
+  },
+  {
+    "timestamp": "2026-09-27T16:42:01.081303+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 189
+  },
+  {
+    "timestamp": "2026-09-27T16:42:01.162920+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 208
+  },
+  {
+    "timestamp": "2026-09-27T22:01:59.059128+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 192
+  },
+  {
+    "timestamp": "2026-09-27T22:01:59.080724+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 188
+  },
+  {
+    "timestamp": "2026-09-27T22:01:59.615649+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 198
+  },
+  {
+    "timestamp": "2026-09-27T22:36:14.987986+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 169
+  },
+  {
+    "timestamp": "2026-09-27T22:36:15.032431+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 213
+  },
+  {
+    "timestamp": "2026-09-27T22:36:15.047328+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 194
+  },
+  {
+    "timestamp": "2026-09-27T23:01:06.236587+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 184
+  },
+  {
+    "timestamp": "2026-09-27T23:01:06.326442+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 179
+  },
+  {
+    "timestamp": "2026-09-27T23:01:06.379564+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 174
+  },
+  {
+    "timestamp": "2026-09-28T05:33:29.985247+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 183
+  },
+  {
+    "timestamp": "2026-09-28T05:33:30.070562+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 179
+  },
+  {
+    "timestamp": "2026-09-28T05:33:30.132368+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 185
+  },
+  {
+    "timestamp": "2026-09-28T06:11:22.376162+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 186
+  },
+  {
+    "timestamp": "2026-09-28T06:11:22.726698+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 207
   }
 ]
