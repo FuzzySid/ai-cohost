@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEffect, useMemo, useState } from 'react'
-import { CalendarDays, Check, ChevronDown, ClipboardList, Languages, MoreVertical, Search, Send, ShieldAlert, Sparkles } from 'lucide-react'
+import { Check, Languages, Search, ShieldAlert, Sparkles } from 'lucide-react'
 
 type Status = 'needs_action' | 'unanswered' | 'unread' | 'resolved' | 'sent' | string
 type ThreadSummary = {
@@ -55,7 +55,7 @@ function formatTime(value: string) {
   return date.toLocaleDateString([], { month: 'short', day: 'numeric' })
 }
 function statusLabel(status: Status) {
-  if (status === 'sent') return '✓ Sent locally'
+  if (status === 'sent') return '✓ Saved locally'
   if (status === 'resolved') return '✓ Resolved'
   if (status === 'needs_action' || status === 'unanswered') return 'Host Attention Needed'
   if (status === 'unread') return 'Unread'
@@ -125,7 +125,7 @@ export default function ReplyDrafter() {
     <section className="flex min-h-0 flex-col overflow-hidden rounded-lg border border-border bg-white">
       <div className="shrink-0 p-5 pb-3">
         <h1 className="font-display text-2xl font-semibold">Unified Inbox</h1>
-        <p className="mt-1 font-mono text-[10px] text-muted"><i className="mr-1 inline-block h-2 w-2 rounded-full bg-accent"/>Co-Host Model: Lodgify Ops v4.2 · Auto-sync enabled</p>
+        <p className="mt-1 text-sm text-muted">Guest conversations and reply drafts</p>
         <label className="mt-5 flex items-center gap-2 rounded bg-base px-3 py-3 text-sm text-muted"><Search size={17}/><input value={search} onChange={event => setSearch(event.target.value)} className="min-w-0 flex-1 bg-transparent outline-none" placeholder="Filter messages, guests, units..."/></label>
         <div className="mt-3 flex gap-1.5 font-mono text-[10px]">
           <button onClick={() => setFilter('all')} className={`rounded-full px-3 py-1 ${filter === 'all' ? 'bg-ink text-white' : 'bg-base'}`}>All ({threads.length})</button>
@@ -150,10 +150,9 @@ export default function ReplyDrafter() {
     <section className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-lg border border-border bg-white">
       {!activeThreadId && !threadsQuery.isPending && <div className="flex flex-1 items-center justify-center p-8 text-muted">No new messages right now.</div>}
       {activeThreadId && <>
-        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-border p-4">
+        <div className="grid grid-cols-[auto_1fr] items-center gap-4 border-b border-border p-4">
           <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-border/60 font-mono text-sm">{initials(activeThread?.guest ?? activeSummary?.guest ?? 'GC')}</span>
-          <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><b>{activeThread?.guest ?? activeSummary?.guest ?? 'Loading thread…'}</b>{activeSummary && <><span className="font-mono text-xs">{activeSummary.language.toUpperCase()} · Auto-detected</span><span className="font-mono text-xs text-success">◉ Verified Guest</span></>}</div><div className="mt-1 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[11px] text-muted"><span>{activeThread?.channel ?? activeSummary?.channel} · {activeThread?.unit ?? activeSummary?.unit}</span><span>{activeThread?.listing_name ?? activeSummary?.listing_name}</span><span>Thread {activeThreadId}</span></div></div>
-          <div className="flex gap-2"><button aria-label="Guest details" className="icon-btn"><ClipboardList size={17}/></button><button aria-label="Calendar" className="icon-btn"><CalendarDays size={17}/></button><button aria-label="More options" className="icon-btn"><MoreVertical size={17}/></button></div>
+          <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><b>{activeThread?.guest ?? activeSummary?.guest ?? 'Loading thread…'}</b>{activeSummary && <span className="text-sm text-muted">{activeSummary.language.toUpperCase()}</span>}</div><div className="mt-1 flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted"><span>{activeThread?.channel ?? activeSummary?.channel} · {activeThread?.unit ?? activeSummary?.unit}</span><span>{activeThread?.listing_name ?? activeSummary?.listing_name}</span></div></div>
         </div>
 
         <div className="conversation min-h-0 flex-1 space-y-5 overflow-auto bg-base/60 px-7 py-6">
@@ -168,16 +167,15 @@ export default function ReplyDrafter() {
         </div>
 
         <div className="shrink-0 border-t border-border bg-white p-5">
-          {sent && <div className="mb-3 rounded bg-success/10 p-3 text-sm text-success"><Check size={16} className="mr-2 inline"/>Reply marked as sent locally. No channel delivery was performed.</div>}
+          {sent && <div className="mb-3 rounded bg-success/10 p-3 text-sm text-success"><Check size={16} className="mr-2 inline"/>Reply saved to the local inbox. No channel delivery was performed.</div>}
           {!sent && draftQuery.isPending && <div className="animate-pulse rounded border border-border border-l-[3px] border-l-accent p-4" aria-label="Loading reply draft"><div className="h-4 w-1/3 rounded bg-base"/><div className="mt-4 h-20 rounded bg-base"/><div className="mt-4 h-9 w-36 rounded bg-base"/></div>}
           {!sent && draftQuery.isError && <div className="rounded border border-alert/30 bg-alert/5 p-4 text-sm text-alert">{draftQuery.error.message}<button onClick={() => void draftQuery.refetch()} className="ml-3 underline">Try again</button></div>}
           {!sent && needsHuman && <div className="rounded border border-warn/30 bg-warn/15 p-5 text-ink"><div className="flex items-start gap-3"><ShieldAlert size={20} className="mt-0.5 shrink-0 text-warn"/><div><div className="font-semibold">Host reply required</div><p className="mt-1 text-sm leading-5 text-muted">{draftQuery.data?.reason_if_needs_human}</p></div><span className="ml-auto rounded bg-warn/20 px-2 py-1 font-mono text-[9px] uppercase">Needs human</span></div></div>}
           {!sent && draftCanBeEdited && <>
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2 font-mono text-[10px]"><span className="rounded bg-accent px-3 py-2 font-semibold"><Sparkles size={14} className="mr-1 inline"/>AI DRAFT · {draftQuery.data?.confidence.toUpperCase()} CONFIDENCE</span><span className="text-muted">Grounded in listing details</span><span className="text-muted">Tone: Warm &amp; Hospitality</span><span>Language: {draftQuery.data?.detected_language.toUpperCase()}</span></div>
-            <div className="rounded border border-border border-l-[3px] border-l-accent p-4"><div className="flex justify-between font-mono text-[10px] text-muted"><span>Suggested response ready for human validation:</span><span>Draft ready</span></div><textarea value={reply} onChange={event => setReply(event.target.value)} className="mt-2 min-h-24 w-full resize-y text-sm leading-6 outline-none" aria-label="Editable reply draft"/><div className="mt-3 flex flex-wrap items-center gap-2"><button onClick={() => sendMutation.mutate({ thread_id: activeThreadId, message: reply })} disabled={sendMutation.isPending || !reply.trim()} className="primary-btn"><Send size={15}/>{sendMutation.isPending ? 'Sending…' : 'Approve & Send'} <span className="font-mono text-[10px]">⌘↵</span></button><button className="secondary-btn">Edit Manually</button><button onClick={() => void draftQuery.refetch()} disabled={draftQuery.isFetching} className="ghost-btn">{draftQuery.isFetching ? 'Regenerating…' : 'Regenerate'}</button><button onClick={() => setReply('')} className="ghost-btn">Discard Draft</button></div>{sendMutation.isError && <p className="mt-2 text-xs text-alert">{sendMutation.error.message}</p>}</div>
+            <div className="rounded border border-border border-l-[3px] border-l-accent p-4"><div className="text-sm text-muted">Suggested response · review and edit before saving to this demo inbox</div><textarea value={reply} onChange={event => setReply(event.target.value)} className="mt-2 min-h-24 w-full resize-y text-sm leading-6 outline-none" aria-label="Editable reply draft"/><div className="mt-3 flex flex-wrap items-center gap-2"><button onClick={() => sendMutation.mutate({ thread_id: activeThreadId, message: reply })} disabled={sendMutation.isPending || !reply.trim()} className="primary-btn"><Check size={15}/>{sendMutation.isPending ? 'Saving…' : 'Save Reply'}</button><button onClick={() => void draftQuery.refetch()} disabled={draftQuery.isFetching} className="secondary-btn">{draftQuery.isFetching ? 'Regenerating…' : 'Regenerate'}</button><button onClick={() => setReply('')} className="ghost-btn">Discard Draft</button></div>{sendMutation.isError && <p className="mt-2 text-xs text-alert">{sendMutation.error.message}</p>}</div>
           </>}
           {!sent && !draftQuery.isPending && !draftQuery.isError && !needsHuman && !draftCanBeEdited && <div className="rounded bg-base p-4 text-sm text-muted">No reply draft is available for this thread.</div>}
-          <div className="mt-3 rounded bg-base p-3 font-mono text-[10px] text-muted"><ChevronDown className="mr-1 inline"/>Co-Host indexing Manual rules · {activeThread?.unit ?? activeSummary?.unit ?? 'Listing'} Manual</div>
         </div>
       </>}
     </section>

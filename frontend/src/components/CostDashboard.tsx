@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
-import { Activity, ArrowDownToLine } from 'lucide-react'
+import { Activity } from 'lucide-react'
 
 type Tier = 'cheap' | 'mid' | 'premium'
 type RecentCall = { timestamp: string; tier: string; tokens_in: number; tokens_out: number; cost_eur: number }
@@ -38,7 +38,6 @@ export default function CostDashboard() {
         <h1 className="page-title">Host Copilot Costs</h1>
         <p className="mt-2 max-w-2xl text-sm text-muted">Monthly cost estimates use token averages from logged calls and the assumed monthly usage profile.</p>
       </div>
-      <button className="secondary-btn" disabled><ArrowDownToLine size={14}/>Export CSV</button>
     </div>
 
     {isPending && <div className="status-card">Loading cost summary…</div>}
@@ -77,9 +76,8 @@ export default function CostDashboard() {
       </div>
 
       <section className="overflow-hidden rounded-lg border border-border bg-white">
-        <header className="flex items-center justify-between p-5">
+        <header className="flex items-center p-5">
           <div className="flex items-center gap-3"><Activity size={20}/><div><h2 className="font-display font-semibold">Recent usage log</h2><p className="text-xs text-muted">Most recent calls recorded by Host Copilot</p></div></div>
-          <span className="rounded bg-success/10 px-2 py-1 font-mono text-[10px] text-success">● Logging active</span>
         </header>
         {data.recent_calls.length === 0 ? <p className="px-5 pb-5 text-xs text-muted">No calls logged yet, showing projected cost from assumed usage.</p> : <>
           <div className="overflow-auto"><table className="w-full min-w-[640px] border-collapse text-left">

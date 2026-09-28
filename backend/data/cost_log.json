@@ -269,5 +269,40 @@
     "tokens_in": 498,
     "tokens_out": 195,
     "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-28T19:33:46.908687+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 198,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-28T19:43:46.013480+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 189,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-28T19:43:50.734187+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 167,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-28T19:54:15.448655+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 185,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-28T19:56:26.732870+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 1260,
+    "tokens_out": 430,
+    "call_type": "weekly_brief"
   }
 ]
