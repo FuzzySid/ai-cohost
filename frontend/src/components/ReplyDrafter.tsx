@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEffect, useMemo, useState } from 'react'
 import { Check, Languages, Search, ShieldAlert, Sparkles } from 'lucide-react'
+import { apiFetch } from '../lib/api'
 
 type Status = 'needs_action' | 'unanswered' | 'unread' | 'resolved' | 'sent' | string
 type ThreadSummary = {
@@ -28,18 +29,18 @@ async function readJson<T>(response: Response): Promise<T> {
   return response.json() as Promise<T>
 }
 async function fetchThreads(): Promise<ThreadSummary[]> {
-  return readJson<ThreadSummary[]>(await fetch('/api/replies/threads'))
+  return readJson<ThreadSummary[]>(await apiFetch('/api/replies/threads'))
 }
 async function fetchThread(threadId: string): Promise<ThreadDetail> {
-  return readJson<ThreadDetail>(await fetch(`/api/replies/threads/${encodeURIComponent(threadId)}`))
+  return readJson<ThreadDetail>(await apiFetch(`/api/replies/threads/${encodeURIComponent(threadId)}`))
 }
 async function fetchDraft(threadId: string): Promise<Draft> {
-  return readJson<Draft>(await fetch('/api/replies/draft', {
+  return readJson<Draft>(await apiFetch('/api/replies/draft', {
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ thread_id: threadId }),
   }))
 }
 async function sendReply(input: { thread_id: string; message: string }): Promise<{ thread_id: string; status: string }> {
-  return readJson(await fetch('/api/replies/send', {
+  return readJson(await apiFetch('/api/replies/send', {
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(input),
   }))
 }

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { ArrowRight, Clock3, MessageSquare, RefreshCw, ShieldCheck, Sparkles } from 'lucide-react'
 import type { Screen } from '../App'
+import { apiFetch } from '../lib/api'
 
 type OccupancyPoint = { date: string; percent: number }
 type Brief = {
@@ -13,7 +14,7 @@ type Brief = {
 }
 
 async function getBrief(): Promise<Brief> {
-  const response = await fetch('/api/brief/weekly')
+  const response = await apiFetch('/api/brief/weekly')
   if (!response.ok) throw new Error('Unable to load weekly brief')
   return response.json()
 }

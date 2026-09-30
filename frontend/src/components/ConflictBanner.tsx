@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { AlertTriangle, CalendarDays, Check, CircleCheck, CircleDollarSign, Clock3, RefreshCw } from 'lucide-react'
+import { apiFetch } from '../lib/api'
 
 type ConflictKind = 'double_booking' | 'rate_disparity' | 'calendar_sync_delay'
 type Booking = {
@@ -36,13 +37,13 @@ async function readResponse<T>(response: Response): Promise<T> {
 }
 async function getConflicts(includeReviewed = false): Promise<Conflict[]> {
   const query = includeReviewed ? '?include_reviewed=true' : ''
-  return readResponse<Conflict[]>(await fetch(`/api/conflicts${query}`))
+  return readResponse<Conflict[]>(await apiFetch(`/api/conflicts${query}`))
 }
 async function getListingCount(): Promise<ListingCount> {
-  return readResponse<ListingCount>(await fetch('/api/listings/count'))
+  return readResponse<ListingCount>(await apiFetch('/api/listings/count'))
 }
 async function markReviewed(id: string): Promise<{ id: string; reviewed: boolean }> {
-  return readResponse(await fetch(`/api/conflicts/${encodeURIComponent(id)}/review`, { method: 'POST' }))
+  return readResponse(await apiFetch(`/api/conflicts/${encodeURIComponent(id)}/review`, { method: 'POST' }))
 }
 
 function formatDate(date: string, includeYear = false) {

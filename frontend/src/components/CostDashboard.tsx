@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { Activity } from 'lucide-react'
+import { apiFetch } from '../lib/api'
 
 type Tier = 'cheap' | 'mid' | 'premium'
 type RecentCall = { timestamp: string; tier: string; tokens_in: number; tokens_out: number; cost_eur: number }
@@ -15,7 +16,7 @@ const TIERS: Tier[] = ['cheap', 'mid', 'premium']
 const TIER_LABELS: Record<Tier, string> = { cheap: 'Cheap', mid: 'Mid', premium: 'Premium' }
 
 async function getCost(tier: Tier): Promise<Summary> {
-  const response = await fetch(`/api/cost/summary?tier=${tier}`)
+  const response = await apiFetch(`/api/cost/summary?tier=${tier}`)
   if (!response.ok) throw new Error('Unable to load cost summary')
   return response.json()
 }
