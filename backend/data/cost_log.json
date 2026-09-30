@@ -304,5 +304,40 @@
     "tokens_in": 1260,
     "tokens_out": 430,
     "call_type": "weekly_brief"
+  },
+  {
+    "timestamp": "2026-09-28T21:24:49.063340+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 194,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-29T03:57:03.476190+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 194,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-29T05:19:07.667427+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 219,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-29T05:51:32.910337+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 178,
+    "call_type": "reply_draft"
+  },
+  {
+    "timestamp": "2026-09-29T05:51:40.982653+00:00",
+    "model": "claude-sonnet-5",
+    "tokens_in": 498,
+    "tokens_out": 192,
+    "call_type": "reply_draft"
   }
 ]
